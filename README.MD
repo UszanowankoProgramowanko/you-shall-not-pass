@@ -11,3 +11,9 @@ Each example is a standalone app. You only need to run `composer install` in it'
 - uszanowanko-3 - app with voters as access control
 - uszanowanko-4 - custom provider for facebook authentication
 - uszanowanko-5 - using listener to provider two-factor authentication
+
+### Running
+
+- run `composer install`
+- install fixtures by running `php app/console doctrine:fixtures:load`
+- run php server by 'php app/console server:start'
