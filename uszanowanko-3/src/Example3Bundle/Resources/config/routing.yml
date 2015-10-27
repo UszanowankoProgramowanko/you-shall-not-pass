@@ -1,0 +1,21 @@
+example_3_main_page:
+  path: /example-3
+  defaults: { _controller: Example3Bundle:Example:index}
+
+example_3_login:
+  path: /example-3/login
+  defaults: { _controller: Example3Bundle:Security:login}
+
+example_3_login_check:
+  path: /example-3/login_check
+
+example_3_logout:
+  path: /example-3/logout
+
+example_3_comment_add:
+  path: /example-3/comment/add
+  defaults: { _controller: Example3Bundle:Comment:addComment}
+
+example_3_comment_remove:
+  path: /example-3/comment/remove/{id}
+  defaults: { _controller: Example3Bundle:Comment:removeComment}

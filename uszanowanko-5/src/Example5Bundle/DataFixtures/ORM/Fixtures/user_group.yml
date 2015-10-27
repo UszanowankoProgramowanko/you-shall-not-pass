@@ -1,0 +1,10 @@
+user_groups:
+  user-1:
+    groups:
+      - group-1
+  user-2:
+    groups:
+      - group-2
+  user-3:
+    groups:
+      - group-3

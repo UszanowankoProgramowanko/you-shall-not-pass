@@ -1,0 +1,19 @@
+{
+  "name": "uszanowanko-symfony",
+  "version": "0.0.0",
+  "authors": [
+    "Adam Polak <adam.polak@silence.pl>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

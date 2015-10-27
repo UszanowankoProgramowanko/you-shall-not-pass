@@ -1,0 +1,16 @@
+users:
+  user-1:
+    username: admin
+    email: uszanowanko1@sharklasers.com
+    password: admin123
+    twoFactor: 0
+  user-2:
+    username: user1
+    email: uszanowanko2@sharklasers.com
+    password: user123
+    twoFactor: 0
+  user-3:
+    username: twofactor
+    twoFactor: 1
+    email: uszanowanko3@sharklasers.com
+    password: twofactor123

@@ -1,0 +1,11 @@
+example_1_main_page:
+  path: /example-1
+  defaults: { _controller: Example1Bundle:Example:index}
+
+example_1_add_comment:
+  path: /example-1/comment/add
+  defaults: { _controller: Example1Bundle:Comment:addComment}
+
+example_1_remove_comment:
+  path: /example-1/comment/remove/{id}
+  defaults: { _controller: Example1Bundle:Comment:removeComment}

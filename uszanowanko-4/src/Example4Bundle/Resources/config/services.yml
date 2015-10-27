@@ -1,0 +1,43 @@
+services:
+    facebook.client:
+        class: Facebook\Facebook
+        arguments:
+            options:
+              app_id: %facebookapiid%
+              app_secret: %facebookapisecret%
+
+    user.factory:
+        class: Example4Bundle\Factory\UserFactory
+        arguments:
+            - @=service('doctrine.orm.default_entity_manager').getRepository('Example4Bundle:User')
+            - @=service('doctrine.orm.default_entity_manager').getRepository('Example4Bundle:Group')
+
+    facebook.user.provider:
+        class: Example4Bundle\Authentication\Facebook\Provider\FacebookUserProvider
+        arguments:
+            - @facebook.client
+            - @=service('doctrine.orm.default_entity_manager').getRepository('Example4Bundle:User')
+            - @user.factory
+        public: false
+
+    facebook.security.authentication.provider:
+        class: Example4Bundle\Authentication\Facebook\Provider\FacebookProvider
+        arguments:
+            - @facebook.user.provider
+        public: false
+
+    facebook.security.authentication.listener:
+        class: Example4Bundle\Authentication\Facebook\EventListener\FacebookListener
+        arguments:
+            - @security.token_storage
+            - @security.authentication.manager
+            - @facebook.client
+            - @session
+        public: false
+
+    comment.voter:
+        class: Example4Bundle\Voter\CommentVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: security.voter }

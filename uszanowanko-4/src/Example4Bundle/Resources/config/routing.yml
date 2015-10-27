@@ -1,0 +1,24 @@
+example_4_main_page:
+  path: /example-4
+  defaults: { _controller: Example4Bundle:Example:index}
+
+example_4_login:
+  path: /example-4/login
+  defaults: { _controller: Example4Bundle:Security:login}
+
+example_4_login_check:
+  path: /example-4/login_check
+
+example_4_facebook_connect:
+  path: /example-4/facebook-connect
+
+example_4_logout:
+  path: /example-4/logout
+
+example_4_comment_add:
+  path: /example-4/comment/add
+  defaults: { _controller: Example4Bundle:Comment:addComment}
+
+example_4_comment_remove:
+  path: /example-4/comment/remove/{id}
+  defaults: { _controller: Example4Bundle:Comment:removeComment}

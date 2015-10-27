@@ -1,0 +1,13 @@
+{% extends ':app:base.html.twig' %}
+
+{% block header %}
+    <a href="{{ path('example_3_main_page') }}">Main page</a>
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div>{{  error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {{ form(loginType, {'action': url('example_3_login_check')} ) }}
+{% endblock %}

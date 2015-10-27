@@ -1,0 +1,21 @@
+example_2_main_page:
+  path: /example-2
+  defaults: { _controller: Example2Bundle:Example:index}
+
+example_2_login:
+  path: /example-2/login
+  defaults: { _controller: Example2Bundle:Security:login}
+
+example_2_login_check:
+  path: /example-2/login_check
+
+example_2_logout:
+  path: /example-2/logout
+
+example_2_comment_add:
+  path: /example-2/comment/add
+  defaults: { _controller: Example2Bundle:Comment:addComment}
+
+example_2_comment_remove:
+  path: /example-2/comment/remove/{id}
+  defaults: { _controller: Example2Bundle:Comment:removeComment}

@@ -1,0 +1,21 @@
+example_5_main_page:
+  path: /example-5
+  defaults: { _controller: Example5Bundle:Example:index}
+
+example_5_login:
+  path: /example-5/login
+  defaults: { _controller: Example5Bundle:Security:login}
+
+example_5_login_check:
+  path: /example-5/login_check
+
+example_5_logout:
+  path: /example-5/logout
+
+example_5_comment_add:
+  path: /example-5/comment/add
+  defaults: { _controller: Example5Bundle:Comment:addComment}
+
+example_5_comment_remove:
+  path: /example-5/comment/remove/{id}
+  defaults: { _controller: Example5Bundle:Comment:removeComment}

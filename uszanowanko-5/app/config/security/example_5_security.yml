@@ -1,0 +1,31 @@
+security:
+    encoders:
+        Example5Bundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+    providers:
+        users:
+            entity:
+                class: Example5Bundle:User
+                property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            form_login:
+                login_path: example_5_login
+                check_path: example_5_login_check
+                username_parameter: login_type[login]
+                password_parameter: login_type[password]
+                default_target_path: /example-5
+                success_handler: authentication.two_factor.listener
+                provider: users
+            logout:
+                path: /example-5/logout
+                target: /example-5
+
+    access_control:
+      - { path: ^/example-5, roles: IS_AUTHENTICATED_ANONYMOUSLY}

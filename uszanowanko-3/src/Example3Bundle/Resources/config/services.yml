@@ -1,0 +1,7 @@
+services:
+    comment.voter:
+        class: Example3Bundle\Voter\CommentVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: security.voter }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/dist/css/bootstrap.min.css') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}"/>
+    {% block scripts %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if app.user %}
+                    <a class="btn btn-danger pull-right" href="{{ url('example_4_logout') }}">Logout</a>
+                {% else %}
+                    <a class="btn btn-success pull-right" href="{{ url('example_4_login') }}">Login</a>
+                    <span class="pull-right">
+                        <fb:login-button scope="public_profile,email" onlogin="onFacebookConnect();"></fb:login-button>
+                    </span>
+                {% endif %}
+            </div>
+            <div class="col-md-12">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends ':app:base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form(addCommentType, {'action': url('example_1_add_comment')}) }}
+        </div>
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Comments</div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Comment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td>
+                                {{ comment.message }}
+                                <div class="btn-group pull-right" role="group">
+                                    <a class="btn btn-primary" href="{{ path('example_1_remove_comment', {'id': comment.id}) }}">Remove</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
